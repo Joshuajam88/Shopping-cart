@@ -2,8 +2,8 @@ const data = [
     {
         id: 0,
         img: 'cart-img/food2-removebg-preview.png',
-        name: 'Afang souppp',
-        price: 100,
+        name: 'Afang soup',
+        price: 700,
         delivery: 'In 3 - 4 days',
         itemInCart: false
     },
