@@ -11,7 +11,7 @@ const data = [
         id: 1,
         img: 'cart-img/food5-removebg-preview.png',
         name: 'Chicken soup',
-        price: 200,
+        price: 1500,
         delivery: 'In 3 - 4 days',
         itemInCart: false
     },
@@ -19,47 +19,47 @@ const data = [
         id: 2,
         img: 'cart-img/food4-removebg-preview.png', 
         name: 'Spaghetti',
-        price: 50,
+        price: 500,
         delivery: 'In 3 - 4 days',
         itemInCart: false
     },
     {
         id: 3,
-        img: 'cart-img/food2-removebg-preview.png',
-        name: 'Spaghetti',
-        price: 50,
+        img: 'cart-img/food6-removebg-preview.png',
+        name: 'Egg Sauce with yam',
+        price: 1000,
         delivery: 'In 3 - 4 days',
         itemInCart: false
     },
     {
         id: 4,
-        img: 'cart-img/food2-removebg-preview.png',
-        name: 'Spaghetti',
-        price: 50,
+        img: 'cart-img/food3-removebg-preview.png',
+        name: 'Coconut Rice',
+        price: 1400,
         delivery: 'In 3 - 4 days',
         itemInCart: false
     },
     {
         id: 5,
-        img: 'cart-img/food2-removebg-preview.png',
-        name: 'Spaghetti',
-        price: 50,
+        img: 'cart-img/food1-removebg-preview.png',
+        name: 'Abasha',
+        price: 500,
         delivery: 'In 3 - 4 days',
         itemInCart: false
     },
     {
         id: 6,
         img: 'cart-img/food2-removebg-preview.png',
-        name: 'Bitter Spaghetti soup',
-        price: 50,
+        name: 'Bitter Leaf soup',
+        price: 800,
         delivery: 'In 3 - 4 days',
         itemInCart: false
     },
     {
         id: 7,
-        img: 'cart-img/food2-removebg-preview.png',
-        name: 'Spaghetti',
-        price: 50,
+        img: 'cart-img/food5-removebg-preview.png',
+        name: 'Jolly Rice',
+        price: 1400,
         delivery: 'In 3 - 4 days',
         itemInCart: false
     },
