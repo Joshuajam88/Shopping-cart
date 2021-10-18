@@ -4,7 +4,6 @@ const data = [
         img: 'cart-img/food2-removebg-preview.png',
         name: 'Afang soup',
         price: 700,
-        delivery: 'In 3 - 4 days',
         itemInCart: false
     },
     {
@@ -12,7 +11,6 @@ const data = [
         img: 'cart-img/food5-removebg-preview.png',
         name: 'Chicken soup',
         price: 1500,
-        delivery: 'In 3 - 4 days',
         itemInCart: false
     },
     {
@@ -20,7 +18,6 @@ const data = [
         img: 'cart-img/food4-removebg-preview.png', 
         name: 'Spaghetti',
         price: 500,
-        delivery: 'In 3 - 4 days',
         itemInCart: false
     },
     {
@@ -28,7 +25,6 @@ const data = [
         img: 'cart-img/food6-removebg-preview.png',
         name: 'Egg Sauce with yam',
         price: 1000,
-        delivery: 'In 3 - 4 days',
         itemInCart: false
     },
     {
@@ -36,7 +32,6 @@ const data = [
         img: 'cart-img/food3-removebg-preview.png',
         name: 'Coconut Rice',
         price: 1400,
-        delivery: 'In 3 - 4 days',
         itemInCart: false
     },
     {
@@ -44,7 +39,6 @@ const data = [
         img: 'cart-img/food1-removebg-preview.png',
         name: 'Abasha',
         price: 500,
-        delivery: 'In 3 - 4 days',
         itemInCart: false
     },
     {
@@ -52,7 +46,6 @@ const data = [
         img: 'cart-img/food2-removebg-preview.png',
         name: 'Bitter Leaf soup',
         price: 800,
-        delivery: 'In 3 - 4 days',
         itemInCart: false
     },
     {
@@ -60,7 +53,6 @@ const data = [
         img: 'cart-img/food5-removebg-preview.png',
         name: 'Jolly Rice',
         price: 1400,
-        delivery: 'In 3 - 4 days',
         itemInCart: false
     },
 ];
@@ -75,7 +67,7 @@ data.forEach(item => {
         <i id="add-to-cart" class="fa fa-shopping-cart" onclick='addToCart(${item.id})'></i>
         <h3 id="item-price">Price : &#8358; ${item.price}</h3>
     </div>
-</div>
+    </div>
     
     `
 })
@@ -201,16 +193,19 @@ function addItem(){
         tempCart.appendChild(listName);
 
 
+        var listQuantity = document.createElement('h3');
+        listQuantity.setAttribute('class', 'quantity');
+        listQuantity.innerHTML = '<div class="quantity" style="display: flex;"><button class="btn minus-btn disabled">-</button><input style="width:30px; text-align: center; border: none;" type="text" id="quantity" value="1" /><button class="btn plus-btn">+</button></div>'
+        tempCart.appendChild(listQuantity);
+
+// Updating quantity number when input number is been increase by 1
+        var price = document.getElementById('item-price');
+        
+
         var listPay = document.createElement('h3');
         listPay.setAttribute('class', 'pay');
         listPay.innerHTML = cart.price;
         tempCart.appendChild(listPay);
-
-
-        var listQuantity = document.createElement('h3');
-        listQuantity.setAttribute('class', 'quantity');
-        listQuantity.innerHTML = '1';
-        tempCart.appendChild(listQuantity);
 
 
         var listTrash = document.createElement('i');
@@ -224,6 +219,42 @@ function addItem(){
     document.getElementById('total-amount').innerHTML = 'Total Amount : &#8358; ' + totalAmount;
     document.getElementById('total-items').innerHTML = 'Total Items : ' + totalItems;
     document.getElementById('total').style.display = 'block';
+    
+    // setting default attribute to disabled of minus value
+    document.querySelector('.minus-btn').setAttribute('disabled', 'disabled');
+    //  taking value to increment and decrement input value
+    var valueCount
+
+    // plus button
+    document.querySelector('.plus-btn').addEventListener('click', function(){
+        // getting value of input
+        valueCount = document.getElementById('quantity').value;
+
+        // input value increment by 1
+        valueCount++;
+        
+        // setting increment input value
+        document.getElementById('quantity').value = valueCount;
+        if(valueCount > 1){
+            document.querySelector('.minus-btn').removeAttribute('disabled');
+            document.querySelector('.minus-btn').classList.remove('disabled');
+        }
+    })
+
+     // Minus button
+    document.querySelector('.minus-btn').addEventListener('click', function(){
+        // getting value of input
+        valueCount = document.getElementById('quantity').value;
+
+        // input value increment by 1
+        valueCount--;
+        
+        // setting increment input value
+        document.getElementById('quantity').value = valueCount;
+        if(valueCount == 1){
+            document.querySelector('.minus-btn').setAttribute('disabled', 'disabled')
+        }
+    })
 }
 
 // hide your cart page
